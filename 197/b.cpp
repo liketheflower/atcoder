@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 class Solution {
     public:
@@ -8,18 +9,20 @@ class Solution {
         vector<string> s;
     void inputs(){
         cin >> R >> C >> y >> x;
+        y--; x--;
         s.reserve(R);
-        while (R--){
-             cin << this_s; 
+        for (int i = 0; i < R; ++i){
+             cin >> this_s; 
              s.push_back(this_s);
         }
     }
     void solve(){
-        int ret = 1;
+        int ret = 0;
         if (s[y][x] == '#') {
              cout << ret <<endl;
              return;
         }
+        ret = 1;
         for (int i=y-1; i >=0; --i) {
              if (s[i][x] == '.') ret++;
              else break;
@@ -40,8 +43,6 @@ class Solution {
     }
 
 };
-    
-
 
 int main(){
   Solution sol;
